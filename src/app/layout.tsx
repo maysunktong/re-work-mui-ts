@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
+import NavigationBar from "../components/Navigation";
 
 export const metadata: Metadata = {
   title: "Re-work",
@@ -15,7 +16,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <AppRouterCacheProvider>{children}</AppRouterCacheProvider>
+        <AppRouterCacheProvider>
+          <NavigationBar />
+          {children}</AppRouterCacheProvider>
       </body>
     </html>
   );

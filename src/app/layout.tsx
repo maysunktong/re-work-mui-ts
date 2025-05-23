@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 import NavigationBar from "../components/NavigationBar";
+import MarqueeBar from "../components/UI/MarqueeBar";
 
 export const metadata: Metadata = {
   title: "Re-work",
@@ -18,6 +19,7 @@ export default function RootLayout({
       <body>
         <AppRouterCacheProvider>
           <NavigationBar />
+          <MarqueeBar speed={40}/>
           {children}
         </AppRouterCacheProvider>
       </body>

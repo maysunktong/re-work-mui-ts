@@ -6,3 +6,7 @@ interface NavItem {
 interface DropdownMenuProps {
   items: NavItem[];
 }
+
+interface MarqueeProps {
+  speed?: number; 
+}

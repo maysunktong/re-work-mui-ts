@@ -1,12 +1,10 @@
 "use client";
 
 import { useState, MouseEvent } from "react";
-import { Button, Menu } from "@mui/material";
-import Box from "@mui/material/Box";
-import Tooltip from "@mui/material/Tooltip";
+import { Button, Menu, Box, Tooltip } from "@mui/material";
 import MovingOutlinedIcon from "@mui/icons-material/MovingOutlined";
 
-const DropdownMenu = ({items}:DropdownMenuProps) => {
+const DropdownMenu = ({ items }: DropdownMenuProps) => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
 

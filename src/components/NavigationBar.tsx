@@ -1,21 +1,18 @@
 "use client";
 
 import Box from "@mui/material/Box";
-import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import Button from "@mui/material/Button";
+import { AppBar, Toolbar, Button, useMediaQuery, useTheme } from "@mui/material";
 import DropdownMenu from "./DropdownMenu";
-import { useMediaQuery, useTheme } from "@mui/material";
 import { usePathname } from "next/navigation";
 
 const NavMenu: NavItem[] = [
-  { href: "/", label: "Home", icon: "" },
-  { href: "/find-jobs", label: "Find Jobs", icon: "" },
+  { href: "/", label: "Home" },
+  { href: "/find-jobs", label: "Find Jobs" },
 ];
 
 const DropDownMenuList: NavItem[] = [
-  { href: "/bookmark", label: "Saved jobs", icon: "" },
-  { href: "/forums", label: "Forums", icon: "" },
+  { href: "/bookmark", label: "Saved jobs" },
+  { href: "/forums", label: "Forums" },
 ];
 
 const NavigationBar = () => {
@@ -52,10 +49,10 @@ const NavigationBar = () => {
                   </Button>
                 );
               })}
-              <DropdownMenu  items={DropDownMenuList} />
+              <DropdownMenu items={DropDownMenuList} />
             </Box>
           ) : (
-            <DropdownMenu  items={DropDownMenuList} />
+            <DropdownMenu items={DropDownMenuList} />
           )}
         </Toolbar>
       </AppBar>

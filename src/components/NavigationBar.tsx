@@ -11,7 +11,6 @@ import { usePathname } from "next/navigation";
 const NavMenu: NavItem[] = [
   { href: "/", label: "Home", icon: "" },
   { href: "/find-jobs", label: "Find Jobs", icon: "" },
-  { href: "/forums", label: "Forums", icon: "" },
 ];
 
 const DropDownMenuList: NavItem[] = [

@@ -1,9 +1,12 @@
-import { useState, MouseEvent } from 'react';
-import { Button, Menu, MenuItem } from '@mui/material';
+"use client";
 
+import { useState, MouseEvent } from "react";
+import { Button, Menu } from "@mui/material";
+import Box from "@mui/material/Box";
+import Tooltip from "@mui/material/Tooltip";
+import MovingOutlinedIcon from "@mui/icons-material/MovingOutlined";
 
-
-const DropdownMenu = ({ options, buttonLabel = 'Open Menu' }: DropdownMenuProps) => {
+const DropdownMenu = ({items}:DropdownMenuProps) => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
 
@@ -16,30 +19,36 @@ const DropdownMenu = ({ options, buttonLabel = 'Open Menu' }: DropdownMenuProps)
   };
 
   return (
-    <>
+    <Box
+      sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
+    >
       <Button
-        aria-controls={open ? 'dropdown-menu' : undefined}
+        aria-controls={open ? "dropdown-menu" : undefined}
         aria-haspopup="true"
-        aria-expanded={open ? 'true' : undefined}
+        aria-expanded={open ? "true" : undefined}
         onClick={handleClick}
-        variant="contained"
       >
-        {buttonLabel}
+        <Tooltip title="Settings">
+          <MovingOutlinedIcon fontSize="large" sx={{ color: "white" }} />
+        </Tooltip>
       </Button>
       <Menu
-        id="dropdown-menu"
         anchorEl={anchorEl}
         open={open}
         onClose={() => handleClose()}
       >
-        {options.map((option) => (
-          <MenuItem key={option} onClick={() => handleClose(option)}>
-            {option}
-          </MenuItem>
+        {items.map((item) => (
+          <Button
+            key={item.href}
+            href={item.href}
+            sx={{ color: "black", display: "block" }}
+          >
+            {item.label}
+          </Button>
         ))}
       </Menu>
-    </>
+    </Box>
   );
-}
+};
 
 export default DropdownMenu;

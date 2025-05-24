@@ -36,11 +36,7 @@ const JobCard = ({ job }: { job: Job }) => {
               sx={{ height: 50, width: 50 }}
             />
           }
-          title={
-            <Typography variant="body1">
-              {job.title}
-            </Typography>
-          }
+          title={<Typography variant="body1">{job.title}</Typography>}
           subheader={
             <Typography variant="subtitle2" color="text.secondary">
               {job.company_name}
@@ -57,7 +53,16 @@ const JobCard = ({ job }: { job: Job }) => {
               variant="outlined"
             />
           </Stack>
-          <Typography variant="body2" color="text.secondary" sx={{overflow: "hidden", textOverflow: "ellipsis"}}>
+          <Typography
+            variant="body2"
+            color="text.secondary"
+            noWrap
+            sx={{
+              overflow: "hidden",
+              textOverflow: "ellipsis",
+              whiteSpace: "nowrap",
+            }}
+          >
             📍 {job.candidate_required_location}
           </Typography>
         </CardContent>

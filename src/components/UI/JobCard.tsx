@@ -38,7 +38,7 @@ const JobCard = ({ job }: { job: Job }) => {
               sx={{ height: 50, width: 50 }}
             />
           }
-          title={<Typography variant="body1">{job.title}</Typography>}
+          title={<Typography variant="body1" sx={{fontWeight: "bold"}}>{job.title}</Typography>}
           subheader={
             <Typography variant="subtitle2" color="text.secondary">
               {job.company_name}

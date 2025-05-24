@@ -41,7 +41,13 @@ const NavigationBar = () => {
                       my: 2,
                       color: isActive ? 'white' : 'gray',
                       display: 'block',
-                      fontWeight: '600'
+                      fontWeight: '600',
+                      fontSize: {
+                        xs: "0.5rem",
+                        sm: "0.5rem",
+                        md: "1rem",
+                        lg: "1rem",
+                      },
                     }}
                   >
                     {item.label}

@@ -1,7 +1,8 @@
-const Job = ({params}) => {
-  const {job} = params;
+const Job = () => {
+
   return (
     <>
+    hi
     </>
   );
 }

@@ -26,7 +26,7 @@ const logos = [
   { name: "Tesla", image: "/brandlogos/logo-tesla.png" },
 ];
 
-const MarqueeBar: React.FC<MarqueeProps> = ({ speed = 10 }) => {
+const MarqueeBar = ({ speed = 10 }: MarqueeProps) => {
   const theme = useTheme();
   const isDesktop = useMediaQuery(theme.breakpoints.up("sm"));
 

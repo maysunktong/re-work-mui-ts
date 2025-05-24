@@ -9,3 +9,12 @@ interface Job {
   job_type: string,
   description: string
 }
+
+interface JobSkeletonProps {
+  length?: number;
+}
+
+interface JobListProps {
+  jobs: Job[];
+  JOBS_PER_PAGE?: number;
+}

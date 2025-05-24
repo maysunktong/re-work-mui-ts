@@ -2,9 +2,7 @@ import { Box, Pagination, Typography } from "@mui/material";
 import { useState } from "react";
 import JobCard from "./UI/JobCard";
 
-const JOBS_PER_PAGE = 15;
-
-const JobList = ({ jobs }: { jobs: Job[] }) => {
+const JobList = ({ jobs, JOBS_PER_PAGE = 15 }: JobListProps) => {
   const [page, setPage] = useState(1);
   const pageCount = Math.ceil(jobs.length / JOBS_PER_PAGE);
 
@@ -25,7 +23,7 @@ const JobList = ({ jobs }: { jobs: Job[] }) => {
           gap: 2,
           width: "80%",
           mx: "auto",
-          py: 2,
+          py: 4,
           color: "gray",
         }}
       >
@@ -35,7 +33,6 @@ const JobList = ({ jobs }: { jobs: Job[] }) => {
         </Box>{" "}
         available jobs
       </Typography>
-
       <Box
         sx={{
           display: "grid",

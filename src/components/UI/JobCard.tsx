@@ -57,7 +57,7 @@ const JobCard = ({ job }: { job: Job }) => {
               variant="outlined"
             />
           </Stack>
-          <Typography variant="body2" color="text.secondary">
+          <Typography variant="body2" color="text.secondary" sx={{overflow: "hidden", textOverflow: "ellipsis"}}>
             📍 {job.candidate_required_location}
           </Typography>
         </CardContent>

@@ -18,6 +18,7 @@ const JobList = ({ jobs, JOBS_PER_PAGE = 15 }: JobListProps) => {
   return (
     <>
       <Typography
+        variant="h6"
         sx={{
           gap: 2,
           width: "80%",
@@ -29,12 +30,6 @@ const JobList = ({ jobs, JOBS_PER_PAGE = 15 }: JobListProps) => {
             lg: "2rem",
           },
           color: "gray",
-          fontSize: {
-            xs: "1rem",
-            sm: "1.5rem",
-            md: "2rem",
-            lg: "2rem",
-          },
         }}
       >
         Showing{" "}

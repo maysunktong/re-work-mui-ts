@@ -21,7 +21,7 @@ const NavigationBar = () => {
   const pathname = usePathname();
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ width: "100%", position: "fixed", zIndex: 1}}>
       <AppBar position="static" sx={{ backgroundColor: "black" }}>
         <Toolbar>
           <Box sx={{ flexGrow: 1 }}>
@@ -42,12 +42,7 @@ const NavigationBar = () => {
                       color: isActive ? 'white' : 'gray',
                       display: 'block',
                       fontWeight: '600',
-                      fontSize: {
-                        xs: "0.5rem",
-                        sm: "0.5rem",
-                        md: "1rem",
-                        lg: "1rem",
-                      },
+                      fontSize: "medium",
                     }}
                   >
                     {item.label}

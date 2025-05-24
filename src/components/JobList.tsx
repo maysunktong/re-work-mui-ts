@@ -22,14 +22,19 @@ const JobList = ({ jobs, JOBS_PER_PAGE = 15 }: JobListProps) => {
           gap: 2,
           width: "80%",
           mx: "auto",
-          py: 4,
+          py: {
+            xs: "1rem",
+            sm: "1.5rem",
+            md: "2rem",
+            lg: "2rem",
+          },
           color: "gray",
           fontSize: {
-              xs: "1rem",
-              sm: "1.5rem",
-              md: "2rem",
-              lg: "2rem",
-            },
+            xs: "1rem",
+            sm: "1.5rem",
+            md: "2rem",
+            lg: "2rem",
+          },
         }}
       >
         Showing{" "}

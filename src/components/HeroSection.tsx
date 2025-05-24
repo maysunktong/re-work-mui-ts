@@ -11,15 +11,15 @@ const HeroSection = () => {
         justifyContent: "center",
         alignItems: "center",
         bgcolor: "black",
+        pt: "3rem"
       }}
     >
       <Box
-        px={4}
         sx={{
           width: "80%",
           height: {
             xs: 200,
-            sm: 300,
+            sm: 200,
             md: 500,
             lg: 500,
           },
@@ -35,7 +35,7 @@ const HeroSection = () => {
           gutterBottom
           sx={{
             fontSize: {
-              xs: "2rem",
+              xs: "1.5rem",
               sm: "3rem",
               md: "4rem",
               lg: "5rem",

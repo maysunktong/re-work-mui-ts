@@ -6,35 +6,70 @@ import {
   Chip,
   Avatar,
   Divider,
+  Stack,
+  Box,
 } from "@mui/material";
 
 const JobCard = ({ job }: { job: Job }) => {
   return (
-    <Card sx={{ maxWidth: 345 }}>
-      <CardHeader
-        avatar={<Avatar alt="company-logo" src={job.company_logo} />}
-        title={job.title}
-        subheader={job.company_name}
-      />
-      <CardContent>
-        <Chip label={job.category} variant="outlined" />
-        <Chip label={job.contract_type} variant="outlined" />
-
-        <Typography
-          noWrap
-          sx={{
-            overflow: "hidden",
-            textOverflow: "ellipsis",
-            whiteSpace: "nowrap",
-            height: "100px",
-          }}
-        >
-          {job.description}
+    <Card
+      sx={{
+        flexGrow: 1,
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+        height: "100%",
+        width: 300,
+        transition: "0.3s",
+        boxShadow: 1,
+        borderRadius: 2,
+        p: 2,
+      }}
+    >
+      <Box>
+        <CardHeader
+          avatar={
+            <Avatar
+              variant="square"
+              alt="company-logo"
+              src={job.company_logo}
+              sx={{ height: 50, width: 50 }}
+            />
+          }
+          title={
+            <Typography variant="body1">
+              {job.title}
+            </Typography>
+          }
+          subheader={
+            <Typography variant="subtitle2" color="text.secondary">
+              {job.company_name}
+            </Typography>
+          }
+          sx={{ pb: 1 }}
+        />
+        <CardContent sx={{ pt: 0 }}>
+          <Stack direction="row" spacing={1} flexWrap="wrap" mb={1}>
+            <Chip label={job.category} variant="outlined" />
+            <Chip
+              color="primary"
+              label={job.job_type === "full_time" ? "Full time" : job.job_type}
+              variant="outlined"
+            />
+          </Stack>
+          <Typography variant="body2" color="text.secondary">
+            📍 {job.candidate_required_location}
+          </Typography>
+        </CardContent>
+      </Box>
+      <Box>
+        <Divider sx={{ my: 1 }} />
+        <Typography variant="caption" fontWeight={500}>
+          💰 {job.salary !== "" ? job.salary : "No salary stated"}
         </Typography>
-        <Divider />
-        <Typography>{job.salary}</Typography>
-      </CardContent>
+      </Box>
     </Card>
   );
 };
+
 export default JobCard;

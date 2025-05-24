@@ -4,8 +4,8 @@ interface Job {
   company_name: string,
   company_logo: string,
   category: string,
-  location: string[],
+  candidate_required_location: string[],
   salary: string,
-  contract_type: string,
+  job_type: string,
   description: string
 }

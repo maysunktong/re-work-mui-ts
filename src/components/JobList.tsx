@@ -1,4 +1,4 @@
-import { Box, Pagination } from "@mui/material";
+import { Box, Pagination, Typography } from "@mui/material";
 import { useState } from "react";
 import JobCard from "./UI/JobCard";
 
@@ -19,6 +19,23 @@ const JobList = ({ jobs }: { jobs: Job[] }) => {
 
   return (
     <>
+      <Typography
+        variant="h4"
+        sx={{
+          gap: 2,
+          width: "80%",
+          mx: "auto",
+          py: 2,
+          color: "gray",
+        }}
+      >
+        Showing{" "}
+        <Box component="span" sx={{ color: "#06d6a0", fontWeight: "bold" }}>
+          {jobs.length}
+        </Box>{" "}
+        available jobs
+      </Typography>
+
       <Box
         sx={{
           display: "grid",
@@ -46,8 +63,8 @@ const JobList = ({ jobs }: { jobs: Job[] }) => {
           onChange={handleChange}
           color="primary"
           sx={{
-            '& .MuiPaginationItem-root': {
-              color: 'white',
+            "& .MuiPaginationItem-root": {
+              color: "white",
             },
           }}
         />

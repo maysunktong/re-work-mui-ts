@@ -23,6 +23,8 @@ const JobCard = ({ job }: { job: Job }) => {
         transition: "0.3s",
         boxShadow: 1,
         borderRadius: 2,
+        border: 1,
+        borderColor: "lightgray",
         p: 2,
       }}
     >
@@ -73,7 +75,7 @@ const JobCard = ({ job }: { job: Job }) => {
           💰 {job.salary !== "" ? job.salary : "No salary stated"}
         </Typography>
       </Box>
-    </Card>
+    </Card >
   );
 };
 

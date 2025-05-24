@@ -18,3 +18,13 @@ interface JobListProps {
   jobs: Job[];
   JOBS_PER_PAGE?: number;
 }
+
+interface Category {
+  label: string,
+  value: string
+}
+
+interface CategoryButtonsProps {
+  selectedCategory: string,
+  onSelectCategory: (value: string) => void;
+}

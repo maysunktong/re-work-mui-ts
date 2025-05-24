@@ -3,14 +3,14 @@
 import { useEffect, useState } from "react";
 import fetchJobs from "../services/api";
 
-const useJobs = () => {
+const useJobs = (category:string) => {
   const [jobs, setJobs] = useState<Job[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const load = async () => {
       try {
-        const data = await fetchJobs();
+        const data = await fetchJobs(category);
         setJobs(data);
       } catch (error) {
         console.log("❌ Error occured", error);
@@ -19,7 +19,7 @@ const useJobs = () => {
       }
     };
     load();
-  }, []);
+  }, [category]);
 
   return { jobs, loading };
 };

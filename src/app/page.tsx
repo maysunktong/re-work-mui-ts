@@ -2,6 +2,7 @@
 
 import HeroSection from "../components/HeroSection";
 import JobList from "../components/JobList";
+import JobSkeleton from "../components/UI/JobSkeleton";
 import useJobs from "../hooks/useJobs";
 
 const Home = () => {
@@ -9,7 +10,7 @@ const Home = () => {
   return (
     <>
       <HeroSection />
-      {loading ? "loading..." : <JobList jobs={jobs} />}
+      {loading ? <JobSkeleton /> : <JobList jobs={jobs} />}
     </>
   );
 };

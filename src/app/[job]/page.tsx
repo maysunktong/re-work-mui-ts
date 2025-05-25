@@ -1,9 +1,7 @@
 import { Typography, Box, Button, Chip, Stack, Avatar } from "@mui/material";
 import fetchJobs from "../../services/api";
 
-const JobPage = async ({ params }: {
-  params: Promise<{ job: string }>
-}) => {
+const JobPage = async ({ params }: { params: { job: string } }) => {
   const jobs: Job[] = await fetchJobs();
   const job = jobs.find((item) => item.id.toString() === params.job);
 

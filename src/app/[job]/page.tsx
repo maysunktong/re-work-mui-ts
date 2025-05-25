@@ -1,7 +1,9 @@
-import { Typography, Box, Button, Chip, Stack, CardMedia } from "@mui/material";
+import { Typography, Box, Button, Chip, Stack, Avatar } from "@mui/material";
 import fetchJobs from "../../services/api";
 
-export default async function JobPage({ params }: JobPageProps) {
+const JobPage = async ({ params }: {
+  params: { job: string}
+}) => {
   const jobs: Job[] = await fetchJobs();
   const job = jobs.find((item) => item.id.toString() === params.job);
 
@@ -22,7 +24,7 @@ export default async function JobPage({ params }: JobPageProps) {
       <Button type="button" href="/" variant="contained">
         Back
       </Button>
-      <Box sx={{ display: "flex", justifyContent: "space-between", alignItem: "center" }}>
+      <Box sx={{ display: "flex", justifyContent: "space-between" }}>
         <Box>
           <Typography fontWeight={500} color="primary.dark" variant="h4" pt={3}>
             {job.title}
@@ -36,11 +38,11 @@ export default async function JobPage({ params }: JobPageProps) {
             {job.company_name}
           </Typography>
         </Box>
-        <CardMedia
-          component="img"
-          height="194"
-          image={job.company_logo}
-          alt={job.company_name}
+        <Avatar
+          variant="square"
+          alt="company-logo"
+          src={job.company_logo}
+          sx={{ height: 100, width: 100 }}
         />
       </Box>
 
@@ -59,4 +61,6 @@ export default async function JobPage({ params }: JobPageProps) {
       />
     </Box>
   );
-}
+};
+
+export default JobPage;

@@ -1,13 +1,16 @@
 import { Typography, Box, Button, Chip, Stack, Avatar } from "@mui/material";
 import fetchJobs from "../../services/api";
 
-const JobPage = async ({ params }: { params: { job: string } }) => {
+const JobPage = async ({ params }: {
+  params: Promise<{ job: string }>;
+}) => {
+  const { job } = await params;
   const jobs: Job[] = await fetchJobs();
 
-  const jobTitleFromUrl = decodeURIComponent(params.job);
-  const job = jobs.find((item) => item.title === jobTitleFromUrl);
+  const jobTitleFromUrl = decodeURIComponent(job);
+  const selectedJob = jobs.find((item) => item.title === jobTitleFromUrl);
 
-  if (!job) {
+  if (!selectedJob) {
     return <Typography>Job not found</Typography>;
   }
 
@@ -27,7 +30,7 @@ const JobPage = async ({ params }: { params: { job: string } }) => {
       <Box sx={{ display: "flex", justifyContent: "space-between" }}>
         <Box>
           <Typography fontWeight={500} color="primary.dark" variant="h4" pt={3}>
-            {job.title}
+            {selectedJob.title}
           </Typography>
           <Typography
             fontWeight={400}
@@ -35,28 +38,28 @@ const JobPage = async ({ params }: { params: { job: string } }) => {
             variant="h6"
             py={2}
           >
-            {job.company_name}
+            {selectedJob.company_name}
           </Typography>
         </Box>
         <Avatar
           variant="square"
           alt="company-logo"
-          src={job.company_logo}
+          src={selectedJob.company_logo}
           sx={{ height: 100, width: 100 }}
         />
       </Box>
 
       <Stack direction="row" spacing={1} flexWrap="wrap" mb={1}>
-        <Chip label={job.category} variant="outlined" />
+        <Chip label={selectedJob.category} variant="outlined" />
         <Chip
           color="primary"
-          label={job.job_type === "full_time" ? "Full time" : job.job_type}
+          label={selectedJob.job_type === "full_time" ? "Full time" : selectedJob.job_type}
           variant="outlined"
         />
       </Stack>
       <Typography
         dangerouslySetInnerHTML={{
-          __html: job.description,
+          __html: selectedJob.description,
         }}
       />
     </Box>

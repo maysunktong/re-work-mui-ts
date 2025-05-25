@@ -6,7 +6,6 @@ import {
   Toolbar,
   Button,
   useMediaQuery,
-  useTheme,
 } from "@mui/material";
 import DropdownMenu from "./DropdownMenu";
 import { usePathname } from "next/navigation";

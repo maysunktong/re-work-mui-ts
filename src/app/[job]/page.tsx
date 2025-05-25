@@ -55,7 +55,6 @@ const JobPage = ({ params }: { params: { job: string } }) => {
       />
     </Box>
   );
-});
-}
+};
 
 export default JobPage;

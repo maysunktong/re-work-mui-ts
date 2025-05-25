@@ -56,7 +56,7 @@ const NavigationBar = ({ mode, setMode }: NavigationBarProps) => {
                     href={item.href}
                     sx={{
                       my: 2,
-                      color: isActive ? "white" : "gray",
+                      color: isActive ? "white" : "white",
                       display: "block",
                       fontWeight: 600,
                       fontSize: "medium",

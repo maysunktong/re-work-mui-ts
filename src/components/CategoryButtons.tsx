@@ -33,10 +33,10 @@ const CategoryButtons = ({ selectedCategory, onSelectCategory }: CategoryButtons
           onClick={() => onSelectCategory(item.value)}
           color={theme.custom.button}
         >
-        { item.label }
+          {item.label}
         </Button>
-  ))
-}
+      ))
+      }
     </Box >
   );
 };

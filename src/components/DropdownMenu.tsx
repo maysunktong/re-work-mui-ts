@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, MouseEvent } from "react";
-import { Button, Menu, Box, Tooltip } from "@mui/material";
+import { Button, Menu, Box, Tooltip, MenuItem } from "@mui/material";
 import MovingOutlinedIcon from "@mui/icons-material/MovingOutlined";
 
 const DropdownMenu = ({ items }: DropdownMenuProps) => {
@@ -26,23 +26,21 @@ const DropdownMenu = ({ items }: DropdownMenuProps) => {
         aria-expanded={open ? "true" : undefined}
         onClick={handleClick}
       >
-        <Tooltip title="Settings">
+        <Tooltip title="Toggle Theme">
           <MovingOutlinedIcon fontSize="large" sx={{ color: "white" }} />
         </Tooltip>
       </Button>
-      <Menu
-        anchorEl={anchorEl}
-        open={open}
-        onClose={() => handleClose()}
-      >
+      <Menu anchorEl={anchorEl} open={open} onClose={() => handleClose}>
         {items.map((item) => (
-          <Button
-            key={item.href}
-            href={item.href}
-            sx={{ color: "black", display: "block" }}
+          <MenuItem
+            key={item.label}
+            onClick={() => {
+              item.onClick();
+              handleClose();
+            }}
           >
             {item.label}
-          </Button>
+          </MenuItem>
         ))}
       </Menu>
     </Box>

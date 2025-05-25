@@ -4,25 +4,32 @@ import Box from "@mui/material/Box";
 import { AppBar, Toolbar, Button, useMediaQuery, useTheme } from "@mui/material";
 import DropdownMenu from "./DropdownMenu";
 import { usePathname } from "next/navigation";
+import { useMemo } from "react";
+import { getTheme } from "../theme/theme";
 
 const NavMenu: NavItem[] = [
   { href: "/", label: "Home" },
 ];
 
-const DropDownMenuList: NavItem[] = [
-  { href: "/bookmark", label: "Saved jobs" },
-  { href: "/forums", label: "Forums" },
-];
-
-const NavigationBar = () => {
-  const theme = useTheme();
+const NavigationBar = ({ mode, setMode }: NavigationBarProps) => {
+  const theme = useMemo(() => getTheme(mode), [mode]);
   const isDesktop = useMediaQuery(theme.breakpoints.up("sm"));
-
   const pathname = usePathname();
 
+  const DropDownMenuList = [
+    {
+      label: "Light Mode",
+      onClick: () => setMode("light"),
+    },
+    {
+      label: "Dark Mode",
+      onClick: () => setMode("dark"),
+    },
+  ];
+
   return (
-    <Box sx={{ width: "100%", position: "fixed", zIndex: 1}}>
-      <AppBar position="static" sx={{ backgroundColor: "black" }}>
+    <Box sx={{ width: "100%", position: "fixed", zIndex: 1 }}>
+      <AppBar position="static" sx={{ backgroundColor: theme.custom.nav }}>
         <Toolbar>
           <Box sx={{ flexGrow: 1 }}>
             <Button href="/">
@@ -39,9 +46,9 @@ const NavigationBar = () => {
                     href={item.href}
                     sx={{
                       my: 2,
-                      color: isActive ? 'white' : 'gray',
-                      display: 'block',
-                      fontWeight: '600',
+                      color: isActive ? "white" : "gray",
+                      display: "block",
+                      fontWeight: 600,
                       fontSize: "medium",
                     }}
                   >

@@ -1,7 +1,9 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useTheme } from "@mui/material";
 import MarqueeBar from "./UI/MarqueeBar";
 
 const HeroSection = () => {
+    const theme = useTheme();
+
   return (
     <Box
       sx={{
@@ -10,7 +12,7 @@ const HeroSection = () => {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        bgcolor: "black",
+        bgcolor: theme.custom.hero,
         pt: "3rem"
       }}
     >

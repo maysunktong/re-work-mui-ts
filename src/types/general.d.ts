@@ -3,9 +3,17 @@ interface NavItem {
   label: string,
 }
 interface DropdownMenuProps {
-  items: NavItem[];
+  items: {
+    label: string;
+    onClick: () => void;
+  }[];
 }
 
 interface MarqueeProps {
   speed?: number; 
+}
+
+interface NavigationBarProps {
+  mode: "light" | "dark";
+  setMode: (mode: "light" | "dark") => void;
 }

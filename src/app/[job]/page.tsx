@@ -1,9 +1,8 @@
 import { Typography, Box, Button, Chip, Stack, Avatar } from "@mui/material";
 import fetchJobs from "../../services/api";
-import { use } from "react";
 
-const JobPage = ({ params }: { params: { job: string } }) => {
-  const jobs = use(fetchJobs());
+const JobPage = async ({ params }: { params: { job: string } }) => {
+  const jobs: Job[] = await fetchJobs();
   const job = jobs.find((item) => item.id.toString() === params.job);
 
   if (!job) {
@@ -28,7 +27,12 @@ const JobPage = ({ params }: { params: { job: string } }) => {
           <Typography fontWeight={500} color="primary.dark" variant="h4" pt={3}>
             {job.title}
           </Typography>
-          <Typography fontWeight={400} color="primary.light" variant="h6" py={2}>
+          <Typography
+            fontWeight={400}
+            color="primary.light"
+            variant="h6"
+            py={2}
+          >
             {job.company_name}
           </Typography>
         </Box>

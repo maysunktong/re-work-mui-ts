@@ -5,13 +5,18 @@ export const getTheme = (mode: "light" | "dark"): Theme =>
     palette: {
       mode,
       background: {
-        default: mode === "light" ? "#9857F2" : "#121212",
-        paper: mode === "light" ? "#0DD97A" : "#1e1e1e",
+        default: mode === "light" ? "#ffffff" : "#000000",
+        paper: mode === "light" ? "#ffffff" : "#000000",
       },
     },
     custom: {
-      hero: mode === "light" ? "#0DD97A" : "#222",
-      nav: mode === "light" ? "#9857F2" : "#222",
-      footer: mode === "light" ? "#1BCBF2" : "#111",
+      hero: {
+        background: mode === "light" ? "#3a86ff" : "#000000",
+        subText: mode === "light" ? "lightgray" : "white",
+      },
+      nav: mode === "light" ? "#03045e" : "#000000",
+      button: mode === "light" ? "primary" : "success",
+      footer: mode === "light" ? "#1BCBF2" : "#000000",
+      paginationText: mode === "light" ? "black" : "white",
     },
   } as any);

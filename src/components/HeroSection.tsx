@@ -2,7 +2,7 @@ import { Box, Typography, useTheme } from "@mui/material";
 import MarqueeBar from "./UI/MarqueeBar";
 
 const HeroSection = () => {
-    const theme = useTheme();
+  const theme = useTheme();
 
   return (
     <Box
@@ -12,7 +12,7 @@ const HeroSection = () => {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        bgcolor: theme.custom.hero,
+        bgcolor: theme.custom.hero.background,
         pt: "3rem"
       }}
     >
@@ -51,7 +51,7 @@ const HeroSection = () => {
           fontWeight={300}
           gutterBottom
           sx={{
-            color: "gray",
+            color: theme.custom.hero.subText,
             fontSize: {
               xs: "1.2rem",
               sm: "1.5rem",

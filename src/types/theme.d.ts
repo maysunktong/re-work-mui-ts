@@ -4,7 +4,10 @@ declare module "@mui/material/styles" {
   interface Theme {
     custom: {
       nav: string;
-      hero: string;
+      hero: {
+        background: string,
+        subText: string
+      },
       footer: string;
     };
   }

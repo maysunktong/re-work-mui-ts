@@ -31,12 +31,13 @@ const CategoryButtons = ({ selectedCategory, onSelectCategory }: CategoryButtons
           key={item.value}
           variant={selectedCategory === item.value ? "contained" : "outlined"}
           onClick={() => onSelectCategory(item.value)}
-          color="success"
+          color={theme.custom.button}
         >
-          {item.label}
+        { item.label }
         </Button>
-      ))}
-    </Box>
+  ))
+}
+    </Box >
   );
 };
 export default CategoryButtons;

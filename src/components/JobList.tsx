@@ -1,10 +1,11 @@
-import { Box, Pagination, Typography } from "@mui/material";
+import { Box, Pagination, Typography, useTheme } from "@mui/material";
 import { useState } from "react";
 import JobCard from "./UI/JobCard";
 
 const JobList = ({ jobs, JOBS_PER_PAGE = 15 }: JobListProps) => {
   const [page, setPage] = useState(1);
   const pageCount = Math.ceil(jobs.length / JOBS_PER_PAGE);
+  const theme = useTheme();
 
   const handleChange = (_event: React.ChangeEvent<unknown>, value: number) => {
     setPage(value);
@@ -66,7 +67,7 @@ const JobList = ({ jobs, JOBS_PER_PAGE = 15 }: JobListProps) => {
           color="primary"
           sx={{
             "& .MuiPaginationItem-root": {
-              color: "white",
+              color: theme.custom.paginationText,
             },
           }}
         />

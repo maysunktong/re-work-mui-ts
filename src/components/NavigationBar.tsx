@@ -1,15 +1,19 @@
 "use client";
 
 import Box from "@mui/material/Box";
-import { AppBar, Toolbar, Button, useMediaQuery, useTheme } from "@mui/material";
+import {
+  AppBar,
+  Toolbar,
+  Button,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import DropdownMenu from "./DropdownMenu";
 import { usePathname } from "next/navigation";
 import { useMemo } from "react";
 import { getTheme } from "../theme/theme";
 
-const NavMenu: NavItem[] = [
-  { href: "/", label: "Home" },
-];
+const NavMenu: NavItem[] = [{ href: "/", label: "Home" }];
 
 const NavigationBar = ({ mode, setMode }: NavigationBarProps) => {
   const theme = useMemo(() => getTheme(mode), [mode]);
@@ -29,7 +33,14 @@ const NavigationBar = ({ mode, setMode }: NavigationBarProps) => {
 
   return (
     <Box sx={{ width: "100%", position: "fixed", zIndex: 1 }}>
-      <AppBar position="static" sx={{ backgroundColor: theme.custom.nav }}>
+      <AppBar
+        position="static"
+        sx={{
+          backgroundColor: theme.custom.nav,
+          backgroundImage: "none",
+          boxShadow: "none",
+        }}
+      >
         <Toolbar>
           <Box sx={{ flexGrow: 1 }}>
             <Button href="/">

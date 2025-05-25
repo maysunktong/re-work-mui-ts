@@ -1,6 +1,7 @@
 import { Box, Pagination, Typography, useTheme } from "@mui/material";
 import { useState } from "react";
 import JobCard from "./UI/JobCard";
+import Link from "next/link";
 
 const JobList = ({ jobs, JOBS_PER_PAGE = 15 }: JobListProps) => {
   const [page, setPage] = useState(1);
@@ -54,9 +55,11 @@ const JobList = ({ jobs, JOBS_PER_PAGE = 15 }: JobListProps) => {
         }}
       >
         {paginatedJobs.map((job) => (
-          <Box key={job.id} sx={{ display: "flex" }}>
-            <JobCard job={job} />
-          </Box>
+          <Link key={job.id} href={`/${job.id}`} passHref>
+            <Box key={job.id} sx={{ display: "flex" }}>
+              <JobCard job={job} />{" "}
+            </Box>
+          </Link>
         ))}
       </Box>
       <Box display="flex" justifyContent="center" py={2}>

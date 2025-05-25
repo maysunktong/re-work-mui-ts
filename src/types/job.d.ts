@@ -28,3 +28,9 @@ interface CategoryButtonsProps {
   selectedCategory: string,
   onSelectCategory: (value: string) => void;
 }
+
+interface JobPageProps {
+  params: {
+    job: string;
+  };
+}

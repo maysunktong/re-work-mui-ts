@@ -55,8 +55,8 @@ const JobList = ({ jobs, JOBS_PER_PAGE = 15 }: JobListProps) => {
         }}
       >
         {paginatedJobs.map((job) => (
-          <Link key={job.id} href={`/${job.id}`} passHref>
-              <JobCard job={job} />{" "}
+          <Link key={job.id} href={`/${job.title}`} passHref>
+              <JobCard job={job} />
           </Link>
         ))}
       </Box>

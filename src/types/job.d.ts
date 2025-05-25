@@ -1,8 +1,8 @@
 interface Job {
-  id: string,
+  id?: string,
   title: string,
   company_name: string,
-  company_logo: string,
+  company_logo: string | null,
   category: string,
   candidate_required_location: string[],
   salary: string,

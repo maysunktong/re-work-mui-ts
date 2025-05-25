@@ -2,7 +2,7 @@ interface Job {
   id?: string,
   title: string,
   company_name: string,
-  company_logo: string | null,
+  company_logo: string,
   category: string,
   candidate_required_location: string[],
   salary: string,

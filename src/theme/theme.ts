@@ -15,7 +15,6 @@ export const getTheme = (mode: "light" | "dark"): Theme =>
         subText: mode === "light" ? "lightgray" : "white",
       },
       nav: mode === "light" ? "#03045e" : "#000000",
-      button: mode === "light" ? "primary" : "success",
       footer: mode === "light" ? "#1BCBF2" : "#000000",
       paginationText: mode === "light" ? "black" : "white",
     },

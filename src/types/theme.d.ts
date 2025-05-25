@@ -8,7 +8,6 @@ declare module "@mui/material/styles" {
         background: string,
         subText: string
       },
-      button: string,
       paginationText: string,
       footer: string;
     };

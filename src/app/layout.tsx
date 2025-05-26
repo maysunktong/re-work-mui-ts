@@ -9,6 +9,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import NavigationBar from "../components/NavigationBar";
 import { Box } from "@mui/material";
 import { getTheme } from "../theme/theme";
+import Footer from "../components/Footer";
 
 
 const metadata: Metadata = {
@@ -34,6 +35,7 @@ export default function RootLayout({
             <Box sx={{ minHeight: "100vh", bgcolor: "theme.default" }}>
               <NavigationBar setMode={setMode} mode={mode} />
               {children}
+              <Footer />
             </Box>
           </ThemeProvider>
         </AppRouterCacheProvider>

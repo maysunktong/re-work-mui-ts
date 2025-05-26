@@ -18,7 +18,7 @@ const JobList = ({ jobs, JOBS_PER_PAGE = 15 }: JobListProps) => {
   );
 
   return (
-    <>
+    <Box pb={6}>
       <Typography
         variant="h6"
         sx={{
@@ -56,7 +56,7 @@ const JobList = ({ jobs, JOBS_PER_PAGE = 15 }: JobListProps) => {
       >
         {paginatedJobs.map((job) => (
           <Link key={job.id} href={`/${job.title}`} passHref>
-              <JobCard job={job} />
+            <JobCard job={job} />
           </Link>
         ))}
       </Box>
@@ -73,7 +73,7 @@ const JobList = ({ jobs, JOBS_PER_PAGE = 15 }: JobListProps) => {
           }}
         />
       </Box>
-    </>
+    </Box>
   );
 };
 

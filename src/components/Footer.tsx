@@ -12,7 +12,7 @@ const Footer = () => {
         sx={{
           flexDirection: {
             xs: "column",
-            lg: "row"
+            lg: "row",
           },
           gap: 2,
           width: "80%",

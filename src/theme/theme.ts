@@ -17,5 +17,9 @@ export const getTheme = (mode: "light" | "dark"): Theme =>
       nav: mode === "light" ? "#03045e" : "#000000",
       footer: mode === "light" ? "#1BCBF2" : "#000000",
       paginationText: mode === "light" ? "black" : "white",
+      skeleton: {
+        background: mode === "light" ? "white" : "black",
+        border: mode === "light" ? "lightgray" : "white",
+      },
     },
   } as any);

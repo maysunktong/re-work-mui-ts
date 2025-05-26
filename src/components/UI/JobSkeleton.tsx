@@ -6,9 +6,12 @@ import {
   Card,
   Divider,
   Stack,
+  useTheme
 } from "@mui/material";
 
 const JobSkeleton = ({ length = 6 }: JobSkeletonProps) => {
+  const theme = useTheme();
+
   return (
     <>
       <List
@@ -40,8 +43,8 @@ const JobSkeleton = ({ length = 6 }: JobSkeletonProps) => {
                 boxShadow: 1,
                 borderRadius: 2,
                 border: 1,
-                borderColor: "lightgray",
-                bgcolor: "lightcyan",
+                borderColor: theme.custom.skeleton.border,
+                bgcolor: theme.custom.skeleton.background,
                 p: 2,
               }}
             >

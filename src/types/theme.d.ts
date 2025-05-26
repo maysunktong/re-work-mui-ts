@@ -10,6 +10,10 @@ declare module "@mui/material/styles" {
       },
       paginationText: string,
       footer: string;
+      skeleton: {
+        background: string,
+        border: string,
+      }
     };
   }
 }

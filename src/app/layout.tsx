@@ -1,10 +1,10 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import type { Metadata } from "next";
 import "./globals.css";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
-import { ThemeProvider} from "@mui/material/styles";
+import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import NavigationBar from "../components/NavigationBar";
 import { Box } from "@mui/material";
@@ -23,6 +23,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const [mode, setMode] = useState<"light" | "dark">("light");
+
+  useEffect(() => {
+    const savedMode = localStorage.getItem("mode") as "light" | "dark";
+    setMode(savedMode || "dark");
+  }, []);
+
+  useEffect(() => {
+    if (mode) {
+      localStorage.setItem("mode", mode);
+    }
+  }, [mode]);
 
   const theme = useMemo(() => getTheme(mode), [mode]);
 

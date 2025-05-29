@@ -4,7 +4,7 @@ import { useState, useMemo } from "react";
 import type { Metadata } from "next";
 import "./globals.css";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { ThemeProvider} from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import NavigationBar from "../components/NavigationBar";
 import { Box } from "@mui/material";
@@ -32,7 +32,7 @@ export default function RootLayout({
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
             <CssBaseline />
-            <Box sx={{ minHeight: "100vh", bgcolor: "theme.default" }}>
+            <Box sx={{ minHeight: "100vh", bgcolor: "theme.mode" }}>
               <NavigationBar setMode={setMode} mode={mode} />
               {children}
               <Footer />

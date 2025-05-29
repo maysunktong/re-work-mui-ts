@@ -8,7 +8,11 @@ import NavigationBar from "./NavigationBar";
 import Footer from "./Footer";
 import { getTheme } from "../theme/theme";
 
-export default function ThemeWrapper({ children }: { children: React.ReactNode }) {
+export default function ThemeWrapper({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   const [mode, setMode] = useState<"light" | "dark" | undefined>(undefined);
 
   useEffect(() => {

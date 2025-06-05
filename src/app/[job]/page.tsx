@@ -19,6 +19,7 @@ const JobPage = async ({ params }: {
       sx={{
         gap: 2,
         width: "80%",
+        minHeight: "100dvh",
         mx: "auto",
         py: "6rem",
         color: "gray",

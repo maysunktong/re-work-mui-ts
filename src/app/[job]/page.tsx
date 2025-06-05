@@ -1,5 +1,6 @@
 import { Typography, Box, Button, Chip, Stack, Avatar } from "@mui/material";
 import fetchJobs from "../../services/api";
+import { slugify } from "../../utils/utils";
 
 const JobPage = async ({ params }: {
   params: Promise<{ job: string }>;
@@ -7,8 +8,8 @@ const JobPage = async ({ params }: {
   const { job } = await params;
   const jobs: Job[] = await fetchJobs();
 
-  const jobTitleFromUrl = decodeURIComponent(job);
-  const selectedJob = jobs.find((item) => item.title === jobTitleFromUrl);
+  const jobUrl = slugify(job);
+  const selectedJob = jobs.find((item) => slugify(item.title) === jobUrl);
 
   if (!selectedJob) {
     return <Typography>Job not found</Typography>;

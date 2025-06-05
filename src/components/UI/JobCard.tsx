@@ -19,7 +19,7 @@ const JobCard = ({ job }: { job: Job }) => {
         flexDirection: "column",
         justifyContent: "space-between",
         height: "100%",
-        width: 300,
+        minWidth: 300,
         transition: "0.3s",
         boxShadow: 1,
         borderRadius: 2,
